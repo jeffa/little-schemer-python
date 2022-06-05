@@ -29,3 +29,8 @@ def member(a, lat):
         return False
     else:
         return car(lat) == a or member(a, cdr(lat))
+
+def rember(a, lat):
+    if null(lat):
+        return False
+
