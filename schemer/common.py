@@ -6,6 +6,11 @@ def atom(x):
 def null(lat):
     return not len(lat)
 
+def cons(x, lat):
+    new_list = lat.copy()
+    new_list.insert(0, x)
+    return new_list
+
 def car(lat):
     if isinstance(lat, list):
         return lat[0]

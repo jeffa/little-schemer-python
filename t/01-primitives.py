@@ -1,5 +1,5 @@
 import unittest
-from schemer.common import( atom, null, car, cdr )
+from schemer.common import( atom, null, cons, car, cdr )
 
 class TestLoad(unittest.TestCase):
 
@@ -11,6 +11,13 @@ class TestLoad(unittest.TestCase):
     def test_null(self):
         self.assertEqual( null(['a','b','c']), False, 'lat is not null' )
         self.assertEqual( null([]), True, 'empty lat is null' )
+
+    def test_cons(self):
+        mylist = ["banana", "cherry"]
+        mycopy = mylist.copy()
+        self.assertEqual( cons('apple', mylist), ["apple", "banana", "cherry"], 'cons atom onto lat' )
+        self.assertEqual( cons(mylist, mylist), [["banana", "cherry"], "banana", "cherry"], 'car lat onto lat' )
+        self.assertEqual( mylist, mycopy, 'list has not changed' )
 
     def test_car(self):
         mylist = ["apple", "banana", "cherry"]
