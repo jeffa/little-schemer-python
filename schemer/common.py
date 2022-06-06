@@ -76,32 +76,44 @@ def subst(new, old, lat):
 def subst2(new, o1, o2, lat):
     if null(lat):
         return []
+    elif car(lat) == o1:
+        return cons(new, cdr(lat))
+    elif car(lat) == o2:
+        return cons(new, cdr(lat))
     else:
-        return []
+        return cons(car(lat), subst2(new, o1, o2, cdr(lat)))
 
 def multirember(a, lat):
     if null(lat):
         return []
+    elif car(lat) == a:
+        return multirember(a, cdr(lat))
     else:
-        return []
+        return cons(car(lat), multirember(a, cdr(lat)))
 
 def multiinsertL(new, old, lat):
     if null(lat):
         return []
+    elif car(lat) == old:
+        return cons(new, cons(old, multiinsertL(new, old, cdr(lat))))
     else:
-        return []
+        return cons(car(lat), multiinsertL(new, old, cdr(lat)))
 
 def multiinsertR(new, old, lat):
     if null(lat):
         return []
+    elif car(lat) == old:
+        return cons(car(lat), cons(new, multiinsertR(new, old, cdr(lat))))
     else:
-        return []
+        return cons(car(lat), multiinsertR(new, old, cdr(lat)))
 
 def multisubst(new, old, lat):
     if null(lat):
         return []
+    elif car(lat) == old:
+        return cons(new, multisubst(new, old, cdr(lat)))
     else:
-        return []
+        return cons(car(lat), multisubst(new, old ,cdr(lat)))
 
 
 
