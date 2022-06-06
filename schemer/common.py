@@ -49,6 +49,31 @@ def firsts(lat):
     else:
         return cons(car(car(lat)), firsts(cdr(lat)))
 
+def insertL(new, old, lat):
+    if null(lat):
+        return []
+    elif car(lat) == old:
+        return cons(new, cons(old, cdr(lat)))
+    else:
+        return cons(car(lat), insertL(new, old, cdr(lat)))
+
+def insertR(new, old, lat):
+    if null(lat):
+        return []
+    elif car(lat) == old:
+        return cons(old, cons(new, cdr(lat)))
+    else:
+        return cons(car(lat), insertR(new, old, cdr(lat)))
+
+def subst(new, old, lat):
+    if null(lat):
+        return []
+    elif car(lat) == old:
+        return cons(new, cdr(lat))
+    else:
+        return cons(car(lat), subst(new, old, cdr(lat)))
+
+
 
 
 
