@@ -25,7 +25,7 @@ def lat(x):
     if isinstance(x, list) and not null(x):
         return True
     elif atom(car(x)):
-        lat(cdr(x))
+        return lat(cdr(x))
     else:
         return False
 
@@ -37,5 +37,13 @@ def member(a, lat):
 
 def rember(a, lat):
     if null(lat):
-        return False
+        return []
+    elif car(lat) == a:
+        return cdr(lat)
+    else:
+        return cons(car(lat), rember(a, cdr(lat)))
+
+
+
+
 
