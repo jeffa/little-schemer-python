@@ -73,7 +73,35 @@ def subst(new, old, lat):
     else:
         return cons(car(lat), subst(new, old, cdr(lat)))
 
+def subst2(new, o1, o2, lat):
+    if null(lat):
+        return []
+    else:
+        return []
 
+def multirember(a, lat):
+    if null(lat):
+        return []
+    else:
+        return []
+
+def multiinsertL(new, old, lat):
+    if null(lat):
+        return []
+    else:
+        return []
+
+def multiinsertR(new, old, lat):
+    if null(lat):
+        return []
+    else:
+        return []
+
+def multisubst(new, old, lat):
+    if null(lat):
+        return []
+    else:
+        return []
 
 
 
