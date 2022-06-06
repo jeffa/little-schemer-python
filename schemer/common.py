@@ -43,6 +43,12 @@ def rember(a, lat):
     else:
         return cons(car(lat), rember(a, cdr(lat)))
 
+def firsts(lat):
+    if null(lat):
+        return []
+    else:
+        return cons(car(car(lat)), firsts(cdr(lat)))
+
 
 
 

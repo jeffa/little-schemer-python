@@ -3,7 +3,7 @@ from schemer.common import rember
 
 class TestLoad(unittest.TestCase):
 
-    def test_member(self):
+    def test_rember(self):
         mylist = ["apple", "banana", "cherry", "banana"]
         mycopy = mylist.copy()
         self.assertEqual( rember('apple', mylist), ["banana", "cherry", "banana"], 'atom removed from lat' )
